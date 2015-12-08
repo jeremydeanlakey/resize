@@ -7,3 +7,15 @@ ANDROID_20DP = [
 ((72, 72), "drawable-xxhdpi"),
 ((96, 96), "drawable-xxxhdpi"),
 ]
+
+
+ANDROID_40DP = [
+((48, 48), "drawable-mdpi"),
+((72, 72), "drawable-hdpi"),
+((96, 96), "drawable-xhdpi"),
+((144, 144), "drawable-xxhdpi"),
+((192, 192), "drawable-xxxhdpi"),
+]
+
+
+ANDROID_LAUNCHER = ANDROID_40DP + [((512, 512), "google_play_store")]
