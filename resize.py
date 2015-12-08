@@ -4,7 +4,7 @@ from PIL import Image
 
 SOURCE_FOLDER = 'inputs'
 
-OUTPUT_SIZES = [
+ANDROID_20DP = [
 ((24, 24), "drawable-mdpi"),
 ((36, 36), "drawable-hdpi"),
 ((48, 48), "drawable-xhdpi"),
@@ -37,5 +37,5 @@ def resize_one_image(img_fname, sizes):
 files = get_source_files()
 
 for f in files:
-    resize_one_image(f, OUTPUT_SIZES)
+    resize_one_image(f, ANDROID_20DP)
 
