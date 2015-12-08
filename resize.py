@@ -1,6 +1,7 @@
 import os
 import PIL
 from PIL import Image
+from sizes import ANDROID_20DP
 
 SOURCE_FOLDER = 'inputs'
 
