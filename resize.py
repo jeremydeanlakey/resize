@@ -3,15 +3,8 @@ import PIL
 from PIL import Image
 from sizes import ANDROID_20DP
 
-SOURCE_FOLDER = 'inputs'
 
-ANDROID_20DP = [
-((24, 24), "drawable-mdpi"),
-((36, 36), "drawable-hdpi"),
-((48, 48), "drawable-xhdpi"),
-((72, 72), "drawable-xxhdpi"),
-((96, 96), "drawable-xxxhdpi"),
-]
+SOURCE_FOLDER = 'inputs'
 
 
 def get_source_files():
@@ -35,8 +28,13 @@ def resize_one_image(img_fname, sizes):
         out_fname = os.path.join(out_folder, img_fname)
         resize_and_save(img, w, h, out_fname)
 
-files = get_source_files()
 
-for f in files:
-    resize_one_image(f, ANDROID_20DP)
+def __main__():
+    files = get_source_files()
+    for f in files:
+        resize_one_image(f, ANDROID_20DP)
+
+
+if __name__ == "__main__":
+    __main__()
 
