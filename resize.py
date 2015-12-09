@@ -1,7 +1,7 @@
 import os
 import PIL
 from PIL import Image
-from sizes import ANDROID_20DP
+from sizes import ANDROID_20DP, ANDROID_LAUNCHER
 
 
 SOURCE_FOLDER = 'inputs'
