@@ -3,15 +3,24 @@ import PIL
 from PIL import Image
 from sizes import ANDROID_20DP, ANDROID_LAUNCHER
 
-
+IMAGE_TYPES = ['png']
 SOURCE_FOLDER = 'inputs'
+
+
+def file_type(fname):
+    last_dot = fname.rfind('.')
+    extension = fname[last_dot+1:] if last_dot >= 0 else None
+    return extension
+
+
+def is_image(fname):
+    return file_type(fname) in IMAGE_TYPES
 
 
 def get_source_files():
     assert os.path.isdir(SOURCE_FOLDER)
     all_files = os.listdir(SOURCE_FOLDER)
-    is_png = lambda name: len(name) >= 5 and name[-4:] == '.png'
-    return filter(is_png, all_files)
+    return filter(is_image, all_files)
 
 
 def resize_and_save(img, w, h, out_fname):
