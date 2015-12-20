@@ -3,7 +3,7 @@ import PIL
 from PIL import Image
 from sizes import ANDROID_20DP, ANDROID_LAUNCHER
 
-IMAGE_TYPES = ['png']
+IMAGE_TYPES = ['png', 'jpg', 'gif']
 SOURCE_FOLDER = 'inputs'
 
 
