@@ -1,4 +1,4 @@
-import os
+import os, sys
 import PIL
 from PIL import Image
 from sizes import ANDROID_20DP, ANDROID_LAUNCHER
@@ -38,12 +38,12 @@ def resize_one_image(img_fname, sizes):
         resize_and_save(img, w, h, out_fname)
 
 
-def __main__():
+def __main__(args):
     files = get_source_files()
     for f in files:
-        resize_one_image(f, ANDROID_20DP)
+        resize_one_image(f, ANDROID_LAUNCHER)
 
 
 if __name__ == "__main__":
-    __main__()
+    __main__(sys.argv[1:])
 
