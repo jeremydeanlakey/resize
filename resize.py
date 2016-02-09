@@ -28,20 +28,32 @@ def resize_and_save(img, w, h, out_fname):
     img.save(out_fname)
 
 
-def resize_one_image(img_fname, sizes):
-    img_path = os.path.join(SOURCE_FOLDER, img_fname)
-    img = Image.open(img_path)
-    for (w, h), out_folder in sizes:
+def split(fname):
+    dot = fname.rfind('.')
+    prefix = fname[:dot]
+    suffix = fname[dot+1:]
+    return prefix, suffix
+
+
+def resize_one_image(infile_name, sizes=ANDROID_LAUNCHER):
+    infile_path = os.path.join(SOURCE_FOLDER, infile_name)
+    img = Image.open(infile_path)
+    fname, suffix = split(infile_name)
+    for (w, h), outfile_path_pattern in sizes:
+        outfile_path = outfile_path_pattern.format(fname, suffix)
+        print "outfile_path", outfile_path
+        out_folder, out_fname = os.path.split(outfile_path)
+        print "out_folder", out_folder
+        print "out_fname", out_fname
         if not os.path.exists(out_folder) or not os.path.isdir(out_folder):
             os.mkdir(out_folder)
-        out_fname = os.path.join(out_folder, img_fname)
-        resize_and_save(img, w, h, out_fname)
+        resize_and_save(img, w, h, outfile_path)
 
 
 def __main__(args):
     files = get_source_files()
     for f in files:
-        resize_one_image(f, ANDROID_LAUNCHER)
+        resize_one_image(f, sizes=ANDROID_LAUNCHER)
 
 
 if __name__ == "__main__":
