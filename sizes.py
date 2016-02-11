@@ -27,3 +27,14 @@ IOS_ICON_76_2x = ((152, 152), "Icon-76@2x")
 IOS_ITUNES = ((512, 512), "iTunesArtwork")
 IOS_ITUNES_2x = ((1024, 1024), "iTunesArtwork@2x")
 
+IOS_ICONS = [
+    IOS_ICON_SMALL,
+    IOS_ICON_SMALL_2x,
+    IOS_ICON_40,
+    IOS_ICON_40_2x,
+    IOS_ICON_76,
+    IOS_ICON_76_2x,
+    IOS_ITUNES,
+    IOS_ITUNES_2x,
+]
+
