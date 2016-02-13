@@ -15,26 +15,25 @@ ANDROID_20DP = calc_android_sizes(20)
 ANDROID_40DP = calc_android_sizes(40)
 ANDROID_LAUNCHER = ANDROID_40DP + [((512, 512), "outputs/google_play_store/{}.{}")]
 
+IOS = {
+    "Icon.png":             (57, 57,),
+    "Icon@2x.png":          (114, 114,),
+    "Icon-60@2x.png":       (120, 120,),
+    "Icon-60@3x.png":       (180, 180,),
+    "Icon-72.png":          (72, 72,),
+    "Icon-72@2x.png":       (144, 144,),
+    "Icon-76.png":          (76, 76,),
+    "Icon-76@2x.png":       (152, 152,),
+    "Icon-Small.png":       (29, 29,),
+    "Icon-Small@2x.png":    (58, 58,),
+    "Icon-Small-40.png":    (40, 40,),
+    "Icon-Small-40@2x.png": (80, 80,),
+    "Icon-Small-50.png":    (50, 50,),
+    "Icon-Small-50@2x.png": (100, 100,),
+    "iTunesArtwork.png":    (512, 512,),
+    "iTunesArtwork@2x.png": (1024, 1024,),
+}
 
-# source: http://makeappicon.com/ios7icon
-IOS_ICON_SMALL = ((29, 29), "Icon-Small")
-IOS_ICON_SMALL_2x = ((58, 58), "Icon-Small@2x")
-IOS_ICON_40 = ((40, 40), "Icon-40")
-IOS_ICON_40_2x = ((80, 80), "Icon-40@2x")
-IOS_ICON_60_2x = ((120, 120), "Icon-60@2x")
-IOS_ICON_76 = ((76, 76), "Icon-76")
-IOS_ICON_76_2x = ((152, 152), "Icon-76@2x")
-IOS_ITUNES = ((512, 512), "iTunesArtwork")
-IOS_ITUNES_2x = ((1024, 1024), "iTunesArtwork@2x")
-
-IOS_ICONS = [
-    IOS_ICON_SMALL,
-    IOS_ICON_SMALL_2x,
-    IOS_ICON_40,
-    IOS_ICON_40_2x,
-    IOS_ICON_76,
-    IOS_ICON_76_2x,
-    IOS_ITUNES,
-    IOS_ITUNES_2x,
-]
+IOS_NAMES = ['outputs/{}'.format(fname) for fname in IOS.keys()]
+IOS_ICONS = zip(IOS.values(), IOS_NAMES)
 
