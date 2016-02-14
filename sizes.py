@@ -1,8 +1,8 @@
-MDPI =  "outputs/drawable-mdpi/{}.{}"
-HDPI =  "outputs/drawable-hdpi/{}.{}"
-XHDPI =  "outputs/drawable-xhdpi/{}.{}"
-XXHDPI =  "outputs/drawable-xxhdpi/{}.{}"
-XXXHDPI =  "outputs/drawable-xxxhdpi/{}.{}"
+MDPI =  "outputs/drawable-mdpi/{}.png"
+HDPI =  "outputs/drawable-hdpi/{}.png"
+XHDPI =  "outputs/drawable-xhdpi/{}.png"
+XXHDPI =  "outputs/drawable-xxhdpi/{}.png"
+XXXHDPI =  "outputs/drawable-xxxhdpi/{}.png"
 
 def calc_android_sizes(dp):
     return [((int(dp*1.2), int(dp*1.2)), MDPI),
