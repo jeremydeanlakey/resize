@@ -1,7 +1,7 @@
 import os, sys
 import PIL
 from PIL import Image
-from sizes import ANDROID_20DP, ANDROID_LAUNCHER
+from sizes import ANDROID_20DP, ANDROID_LAUNCHER, IOS_ICONS
 
 IMAGE_TYPES = ['png', 'jpg', 'gif']
 SOURCE_FOLDER = 'inputs'
@@ -41,10 +41,8 @@ def resize_one_image(infile_name, sizes=ANDROID_LAUNCHER):
     fname, suffix = split(infile_name)
     for (w, h), outfile_path_pattern in sizes:
         outfile_path = outfile_path_pattern.format(fname, suffix)
-        print "outfile_path", outfile_path
+        print "...saving {}".format(outfile_path)
         out_folder, out_fname = os.path.split(outfile_path)
-        print "out_folder", out_folder
-        print "out_fname", out_fname
         if not os.path.exists(out_folder) or not os.path.isdir(out_folder):
             os.mkdir(out_folder)
         resize_and_save(img, w, h, outfile_path)
@@ -53,7 +51,7 @@ def resize_one_image(infile_name, sizes=ANDROID_LAUNCHER):
 def __main__(args):
     files = get_source_files()
     for f in files:
-        resize_one_image(f, sizes=ANDROID_LAUNCHER)
+        resize_one_image(f, sizes=IOS_ICONS)
 
 
 if __name__ == "__main__":
