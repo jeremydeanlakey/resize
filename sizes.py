@@ -15,6 +15,7 @@ ANDROID_20DP = calc_android_sizes(20)
 ANDROID_40DP = calc_android_sizes(40)
 ANDROID_LAUNCHER = ANDROID_40DP + [((512, 512), "outputs/google_play_store/{}.{}")]
 
+# https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1
 IOS = {
     "Icon.png":             (57, 57,),
     "Icon@2x.png":          (114, 114,),
@@ -44,4 +45,5 @@ IOS = {
 
 IOS_NAMES = ['outputs/{}'.format(fname) for fname in IOS.keys()]
 IOS_ICONS = zip(IOS.values(), IOS_NAMES)
+
 
